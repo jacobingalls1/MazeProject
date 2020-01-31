@@ -1,0 +1,1 @@
+This was a project for school. I enjoy the way in which I chose to generate the maze from random integers. I went on to use the bulk of this work in another project and the maze was robust enough to be used without modification.

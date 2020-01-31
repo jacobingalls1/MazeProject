@@ -1,0 +1,18 @@
+TITLE: Jacob Ingalls, section A, Labyrinth
+
+PROBLEM DESCRIPTION: This project generates a random maze, populates it with an appropriate number of enemies and allows the user to navigate and solve the maze. The user is allowed to choose the maze size and the program will open the maze in a roughly consistently sized window on the user's screen. The maze is generated randomly and the enemies move randomly at a set rate based on user input. If the user is able to move to the end of the maze or if the user is defeated by an enemy(upon contact) a screen will appear informing the user of the game state, victory or defeat, respectively.
+
+PROGRAM DOCUMENTATION: This program relies heavily upon SFML for its input and output. Upon startup, the program will use the console to prompt the user for a maze size and difficulty. The maze size will determine the side length of the maze as the maze is a square. The difficulty will determine the speed at which enemies move. There is no way to select the number of enemies because any fewer than the current density usually leaves the path to the exit open for quite a long time and any more makes the maze very difficult or impossible to solve.
+
+TESTS:
+1.) When taking user input, the function getInt() in main.cpp assures that the user can only input numbers in a certain range, simply continuing to ask for a number if the user fails to do so.
+
+2.) For any maze size in the given range, there will always be a valid path to the exit.
+
+3.) The user is prevented from chosing a map size so large that the game is slowed prohibitively. To the the alternative, first input -1000 for size to enter debugging mode and then input 100. The user's input isn't immediately shown on screen because of the number of updates happening with each refresh cycle.
+
+4.) The user is unable to go out of bounds while moving around the maze. (edge cases)
+
+5.) The user's movements are handled very quickly and are processed at the same time, so the user won't see any time difference between reaching the end of the maze and winning, for example.
+
+REFLECTIONS: This project went fairly smoothly overall, however, it would certainly have gone better if I was less stubborn about the solutions to problems. I was originally planning to generate a maze by walking along a random path to the end position and then drawing paths off of this main one without any destination at all. After struggling to properly implement this for a few hours, I realized that it would be easier to simply generate paths and to not necessarily expect the bottom corner to be a path(though I have yet to see a case where it is not). It was a few cases like this that frustrated me until I abandoned what I had in mind for a promising alternative.
